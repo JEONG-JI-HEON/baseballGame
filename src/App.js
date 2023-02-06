@@ -108,6 +108,11 @@ const App = () => {
         ...prevIncorrectAnswers,
         { answer: guess, strikes: newStrikes, balls: newBalls },
       ]);
+    } else if (newStrikes === 0 && newBalls === answer.length) {
+      setIncorrectAnswers((prevIncorrectAnswers) => [
+        ...prevIncorrectAnswers,
+        { answer: guess, strikes: newStrikes, balls: newBalls },
+      ]);
     }
 
     setStrikes(newStrikes);
